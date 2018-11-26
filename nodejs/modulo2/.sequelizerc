@@ -1,0 +1,8 @@
+const path = require('path')
+//informa onde estao os caminhos das pastas e arq do sequelize q modificamos de lugar
+module.exports = {
+    config: path.resolve('src', 'config', 'database.js'),
+    'models-path': path.resolve('src', 'app', 'models'),
+    'seeders-path': path.resolve('src', 'database', 'seeders'),
+    'migrations-path': path.resolve('src', 'database', 'migrations'),
+}

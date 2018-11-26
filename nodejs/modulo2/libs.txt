@@ -1,0 +1,26 @@
+MODULO2, LIBS INSTALADAS
+
+yarn add nodemon
+yarn add express
+yarn add nunjucks
+
+yarn add sequelize (ORM de BANCO RELACIONAL para NODE, trabalha com PostgreSQL, MySQL, SQLite and MSSQL)
+yarn add sequelize-cli
+yarn add pg (node usar postgresql)
+
+//comandos sequelize 
+npx sequelize init
+npx sequelize migration:create --name=create-users
+npx sequelize db:migrate
+
+yarn add bcryptjs
+
+yarn add multer (trabalha com upload de arquivos)
+
+
+
+
+
+
+
+

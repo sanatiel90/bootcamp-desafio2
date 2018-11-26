@@ -1,0 +1,17 @@
+<!-- estende do layout de auth -->
+{% extends "_layouts/auth.njk" %}
+
+{% block body %}
+    <form method="POST" action="/singin" >
+        
+        <img src="/images/logo.svg" height="42">
+        
+        <input type="email" name="email" placeholder="Seu E-mail">
+        <input type="password" name="password" placeholder="Senha Secreta">
+        
+        <button type="submit">Entrar</button>
+
+        <a href="/singup">Criar Conta</a>
+    </form>
+
+{% endblock %}

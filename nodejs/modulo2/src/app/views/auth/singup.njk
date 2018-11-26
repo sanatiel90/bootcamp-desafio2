@@ -1,0 +1,36 @@
+<!-- estende do layout de auth -->
+{% extends "_layouts/auth.njk" %}
+
+{% block body %}
+    <form method="POST" action="/singup" enctype="multipart/form-data">
+        <label for="avatar">
+            <img src="/images/avatar.svg" height="24">
+        </label>
+
+        <input type="file" name="avatar" id="avatar">
+        <input type="text" name="name" placeholder="Nome completo">
+        <input type="email" name="email" placeholder="Seu E-mail">
+        <input type="password" name="password" placeholder="Senha Secreta">
+
+        <label for="provider">
+            <input type="checkbox" id="provider" name="provider" value="1"/>
+            Sou cebeleireiro
+        </label>
+
+        <button type="submit">Criar Conta</button>
+
+        <a href="/">Já possuo conta</a>
+    </form>
+
+<script type="text/javascript">
+    inputAvatar = document.getElementById('avatar')
+    imgAvatar = document.querySelector('label[for=avatar] img')
+    //quando o input de img mudar, modificar img
+    inputAvatar.onchange = function(e){
+        //add uma class à img
+        imgAvatar.classList.add('preview')
+        //carrega a img com o file enviado 
+        imgAvatar.src = URL.createObjectURL(e.target.files[0]) 
+    }
+</script>
+{% endblock %}
