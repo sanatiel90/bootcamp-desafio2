@@ -47,6 +47,7 @@ routes.get('/app/appointment/new/:provider', AppointmentController.create)
 routes.post('/app/appointment/new/:provider', AppointmentController.store)
 
 routes.get('/app/schedule', ScheduleController.index)
+routes.get('/app/schedule/user', ScheduleController.index)
 
 
 //rota para saber quais horarios estao disponiveis para o provider informado

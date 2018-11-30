@@ -10,6 +10,8 @@ const session = require('express-session')
 const LokiStore = require('connect-loki')(session)
 //connect-flash para usar flash messages
 const flash = require('connect-flash')
+//para formatar date no nunjucks
+const dateFilter = require('nunjucks-date-filter')
 
 class App {
     //ao criar nova instancia de App sera instanciado o express e chamado os metodos de config
@@ -42,12 +44,16 @@ class App {
 
     //met q config views
     views(){           //no path.resolve passa como param o dir atual, e a sequencia de dir onde quer chegar, dir separados por virgula     
-        nunjucks.configure(path.resolve(__dirname, 'app', 'views'), {
+        const env = nunjucks.configure(path.resolve(__dirname, 'app', 'views'), {
             watch: this.isDev,
             express: this.express,
-            autoescape: true
+            autoescape: true,
+            
         })
         
+        //add filtro de data para o nunjucks
+        env.addFilter('date', dateFilter);
+ 
         this.express.use(express.static(path.resolve(__dirname, 'public'))) //fazendo express enxergar arquivos dentro da pasta 'public'
         this.express.set('view engine', 'njk') //setando a engine
     }

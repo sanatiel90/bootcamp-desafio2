@@ -16,7 +16,11 @@
                </li>
             {% endfor %}
         </ul>
-        <a href="/app/schedule" class="provider-area" >Área do Profissional</a>
+        {% if user.provider === true %}}
+            <a href="/app/schedule" class="provider-area" >Área do Profissional</a>
+        {% else %}}
+            <a href="/app/schedule/user" class="provider-area" >Meus Agendamentos</a>
+        {% endif %}}
         <a href="/app/logout" class="logout" >Sair</a>
     </div>
 

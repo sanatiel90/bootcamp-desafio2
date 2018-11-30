@@ -4,14 +4,13 @@
 
     <div class="content">
         <strong>Bem vindo, {{ user.name }}</strong>
-        <p>Estes são seus agendamentos marcados</p>
+        <p>Estes são seus agendamentos marcados para hoje:</p>
         <ul>
             {% for schedule in schedules %}
                <li class="provider">
                     <div>
                         <img src="/file/{{ schedule.user.avatar }}">
-                        <strong>Usu{{ schedule.user.name }}</strong>
-                        <p>Horário: {{ schedule.dateAppon }}</p>
+                        <strong>{{ schedule.user.name }} <br> {{ schedule.dateAppon | date("DD/MM/YYYY, HH:mm") }}</strong>  
                     </div>
                     
                </li>
