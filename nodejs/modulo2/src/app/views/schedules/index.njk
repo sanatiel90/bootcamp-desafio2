@@ -1,0 +1,24 @@
+{% extends "_layouts/default.njk" %}
+
+{% block body %}
+
+    <div class="content">
+        <strong>Bem vindo, {{ user.name }}</strong>
+        <p>Estes são seus agendamentos marcados</p>
+        <ul>
+            {% for schedule in schedules %}
+               <li class="provider">
+                    <div>
+                        <img src="/file/{{ schedule.user.avatar }}">
+                        <strong>Usu{{ schedule.user.name }}</strong>
+                        <p>Horário: {{ schedule.dateAppon }}</p>
+                    </div>
+                    
+               </li>
+            {% endfor %}
+        </ul>
+        <a href="/app/schedule" class="provider-area" >Ver todos os agendamentos</a>
+        <a href="/app/logout" class="logout" >Sair</a>
+    </div>
+
+{% endblock %}

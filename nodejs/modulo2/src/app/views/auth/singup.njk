@@ -3,6 +3,8 @@
 
 {% block body %}
     <form method="POST" action="/singup" enctype="multipart/form-data">
+        {% include "_partials/flash.njk" %}
+        
         <label for="avatar">
             <img src="/images/avatar.svg" height="24">
         </label>

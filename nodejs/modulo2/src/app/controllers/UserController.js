@@ -15,6 +15,7 @@ class UserController {
             ... req.body,
             avatar    
         })
+        req.flash('success', 'Usuario criado!')
         return res.redirect('/')
     }
 

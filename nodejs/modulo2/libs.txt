@@ -17,7 +17,14 @@ yarn add bcryptjs
 
 yarn add multer (trabalha com upload de arquivos)
 
+yarn add express-session (trab com sessions)
 
+yarn add session-file-store (armazena sessao em arquivo storage) ////esse ta com erro, usar o proximo
+yarn add connect-loki (armazena sessao em arquivo storage)
+
+yarn add connect-flash (cria flash messages, msg de alerta de error/sucess a serem mostradas após uma requisicao)
+
+yarn add moment (para trabalhar com datas)
 
 
 

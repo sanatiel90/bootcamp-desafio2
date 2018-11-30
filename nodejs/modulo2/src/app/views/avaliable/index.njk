@@ -1,0 +1,9 @@
+<!-- percorrendo os horarios disponiveis para mostrar com radio; horarios nao disponiveis ficarao disable -->
+{% for hour in avaliable %}
+    <label for="time-{{hour.time}}" class="{% if hour.avaliable === false %}disabled{% endif %}">
+        {% if hour.avaliable === true %}
+            <input type="radio" name="dateAppon" value="{{hour.value}}" id="time-{{hour.time}}">
+        {% endif %}
+        {{hour.time}}
+    </label>
+{% endfor %}

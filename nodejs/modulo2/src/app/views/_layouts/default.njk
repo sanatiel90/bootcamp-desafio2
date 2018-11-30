@@ -1,0 +1,14 @@
+<!-- template para views conteudo -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- incluindo componente head -->
+{% include "_partials/head.njk" %}
+<body>
+    <div class="main-wrapper">
+        <!-- define um bloco q vai ser substituido pelas views q estenderem desse layout -->
+        {% block body %}
+        {% endblock %}
+    </div>
+</body>
+</html>
+
